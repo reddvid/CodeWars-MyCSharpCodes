@@ -1,0 +1,32 @@
+using System.Collections.Generic;
+using System.Linq;
+using System;
+
+public class Kata
+{
+  public static string SpinWords(string sentence)
+  {
+    string[] words = sentence.Split();
+    		
+    string spin = string.Empty;
+   
+    foreach (var w in words)
+    {
+      //Welcome
+      Console.WriteLine(w);
+      if (w.Length >= 5)
+      {
+        //Spin word
+        for (int i = 1; i <= w.Length; i++)
+        {    
+          	spin += w[w.Length - i];
+        }
+      }
+      else spin += w;
+      
+      spin += " ";
+    }
+    
+    return spin.TrimEnd();
+  }
+}
